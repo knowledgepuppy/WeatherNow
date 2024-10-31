@@ -3,8 +3,7 @@
 # @Author: R
 # @File: GetData.py
 # 功能: 爬取天气数据
-import urllib3
-
+import requests
 
 class GetData:
     url = ""
@@ -18,7 +17,6 @@ class GetData:
         self.url = url
         if header == "":
             self.headers = {
-                
                 'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
             }
         else:
@@ -28,5 +26,7 @@ class GetData:
         """
         :return: 网址对应的网页内容
         """
-        http = urllib3.PoolManager()
-        return http.request('GET', self.url, headers=self.headers).data
+        res=requests.get(url=self.url,headers=self.headers)
+        print(res.status_code)
+        return res.content.decode("utf-8")
+
