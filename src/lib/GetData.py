@@ -27,6 +27,7 @@ class GetData:
         :return: 网址对应的网页内容
         """
         res=requests.get(url=self.url,headers=self.headers)
+
         print("res_code:"+str(res.status_code))
         return res.content.decode("utf-8")
 
