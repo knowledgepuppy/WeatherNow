@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# @Time: 2024/11/3
+# @Time: 2024/11/6
 # @Author: R
 # @File: TrainDataProcess.py
 #功能：训练数据清洗，分割数据集
 
-from Data2CSV import data2csv
+from lib.Data2CSV import data2csv
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.impute import SimpleImputer
@@ -23,9 +23,10 @@ def ProcessData():
         imputed_X_test 预测数据集]
     """
     # 写入csv
-    data2csv([1, 1], [15, 0], "weather_train_train.csv")
-    data2csv([1, 1], [0, 15], "weather_train_valid.csv")
-    data2csv([0, 0], [15, 0], "weather_test.csv")
+    temp=20
+    data2csv([1, 1], [temp, 0], "weather_train_train.csv")
+    data2csv([1, 1], [0, temp], "weather_train_valid.csv")
+    data2csv([0, 0], [temp, 0], "weather_test.csv")
     X_test = pd.read_csv("weather_test.csv", index_col="Time", parse_dates=True)
     # 读取测试集和验证集
     X = pd.read_csv("weather_train_train.csv", index_col="Time", parse_dates=True)

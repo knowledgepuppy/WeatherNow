@@ -1,14 +1,37 @@
 # -*- coding: utf-8 -*-
-# @Time: 2024.10.31
+# @Time: 2024.11.6
 # @Author:R
 # @File:Data2CSV.py
 # 功能: 转换天气数据为CSV文件
 
 from lxml import etree
-from GetData import GetData
+from lib.GetData import GetData
 import csv
 import re
 from datetime import datetime,timedelta
+
+
+# 去除单位的函数
+import re
+
+def remove_units(data):
+    cleaned_data = []
+    for item in data:
+        #三元表达式
+        # 丢失数据都取2
+        # 这么做 MAE=3.6021
+        item = "3" if item == "-" else item
+        item = "2" if item == "Tr" else item
+        if isinstance(item, str):
+            # 使用正则表达式去除所有非数字和小数点的字符
+            item = re.sub(r'[^\d.]+', '', item)
+        cleaned_data.append(item)
+        
+       
+    return cleaned_data
+
+
+
 
 
 def url_process(years,days):
@@ -53,23 +76,17 @@ def data2csv(years,days,filename):
             data[i]=dates[int(i/9)]
 
 
-    def remove_units(value):
-        # 使用正则表达式去除异常字符
-        return re.sub(r'[^\d.-]', '', value)
-    cleaned_data = [remove_units(item) for item in data]
+    cleaned_data = remove_units(data)
+
     rows = [cleaned_data[i:i+9] for i in range(0, len(cleaned_data), 9)]
 
-    with open('db/'+filename, 'w', newline='') as file:
+    with open(filename, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Time", "Ave_t", "Max_t", "Min_t", "Prec", "SLpress", "Winddir", "Windsp", "Cloud"])
         writer.writerows(rows)
 
 if __name__=="__main__":
-    data2csv([1, 1], [15, 0], "weather_train_train.csv")
-    #取得去年同期后十五天
-    data2csv([1, 1], [0, 15], "weather_train_valid.csv")
-    #取得现在前15天
-    data2csv([0, 0], [15, 0], "weather_test.csv")
+    pass
 
 
 

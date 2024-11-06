@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# @Time: 2024.11.1
+# @Time: 2024.11.6
 # @Author: R
 # @File: GetModel.py
 # 功能：使用随机森林算法训练模型并本地存取
 from sklearn.ensemble import RandomForestRegressor
 import joblib
 from sklearn.metrics import mean_absolute_error
-from TrainDataProcess import ProcessData
+from lib.TrainDataProcess import ProcessData
 
 
 # 训练并保存模型
