@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Time: 2024.11.6
+# @Time: 2024.11.10
 # @Author: R
 # @File: GetModel.py
 # 功能：使用随机森林算法训练模型并本地存取
@@ -21,7 +21,7 @@ def GetModel(a="Model.pkl"):
     [X_train, X_valid, y_train, y_valid, X_test] = ProcessData()
     # 此处用XGB模型，不过有bug，弃用
     # 随机树森林模型
-    model = RandomForestRegressor(random_state=0, n_estimators=1001)
+    model = RandomForestRegressor(random_state=0, n_estimators=300)
     # 训练模型
     model.fit(X_train, y_train)
     # 预测模型，用上个星期的数据

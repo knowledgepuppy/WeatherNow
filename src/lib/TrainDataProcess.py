@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Time: 2024/11/6
+# @Time: 2024/11/10
 # @Author: R
 # @File: TrainDataProcess.py
 #功能：训练数据清洗，分割数据集
@@ -23,7 +23,7 @@ def ProcessData():
         imputed_X_test 预测数据集]
     """
     # 写入csv
-    temp=20
+    temp=10
     data2csv([1, 1], [temp, 0], "weather_train_train.csv")
     data2csv([1, 1], [0, temp], "weather_train_valid.csv")
     data2csv([0, 0], [temp, 0], "weather_test.csv")
@@ -35,7 +35,7 @@ def ProcessData():
 
     # 填充缺少的数值用方差
     my_imputer = SimpleImputer()
-    X_train, X_valid, y_train, y_valid = train_test_split(X, y, train_size=0.8, test_size=0.2, random_state=0)
+    X_train, X_valid, y_train, y_valid = train_test_split(X, y, train_size=0.9, test_size=0.1, random_state=0)
     imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))
     imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
     imputed_X_train.columns = X_train.columns

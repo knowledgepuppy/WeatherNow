@@ -3,7 +3,7 @@
 ## 2024.10.30 commit 1
 >* 新增了爬取天气功能，使用urllib3库进行天气数据的爬取
 ## 2024.10.30 commit 2
->* 更新了log project-guidelines 等相关文档
+* 更新了log project-guidelines 等相关文档
 ## 2024.10.31 commit 3
 >* 处理数据集保存为CSV文件便于后续训练
 ## 2024.11.3 commit 4
@@ -19,3 +19,6 @@
 ## 2024.11.6 commit 8
 >* 更新了 README.md 文档
 >* 更新了 log.md 文档
+## 2024.11.10 commit 9
+>* 优化了模型部分参数
+>* 使用streamlit进行可视化
