@@ -1,33 +1,23 @@
-# 基于机器学习的天气预测及可视化 WeatherNow
- 
-[![GitHub stars](https://img.shields.io/github/stars/admin1025/WeatherNow.svg?style=social&label=Stars)](https://github.com/admin1025/WeatherNow/stargazers)[![GitHub forks](https://img.shields.io/github/forks/admin1025/WeatherNow.svg?style=social&label=Fork)](https://github.com/admin1025/WeatherNow/network/members)[![GitHub watchers](https://img.shields.io/github/watchers/admin1025/WeatherNow.svg?style=social&label=Watch)](https://github.com/admin1025/WeatherNow/watchers)[![GitHub followers](https://img.shields.io/github/followers/admin1025.svg?style=social&label=Follow)](https://github.com/admin1025?tab=followers)
-
-[![GitHub issues](https://img.shields.io/github/issues/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/issues)[![GitHub license](https://img.shields.io/github/license/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/blob/master/LICENSE)[![GitHub last commit](https://img.shields.io/github/last-commit/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/commits)[![GitHub release](https://img.shields.io/github/release/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/releases)
+# 🌦️基于机器学习的天气预测及可视化 WeatherNow
 
 
-
-[更新日志](/docs/log.md)  
-[项目规范](/docs/project-guidelines.md)
-
-
-
-
+[![Contributors][contributors-shield]][contributors-url][![Forks][forks-shield]][forks-url][![Stargazers][stars-shield]][stars-url][![Issues][issues-shield]][issues-url][![MIT License][license-shield]][license-url][![LinkedIn][linkedin-shield]][linkedin-url]
 <!-- 项目 LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/admin1025/WeatherNow">
+    <img src="images/logo/trans_bg.png" alt="Logo" width="300" height="300">
   </a>
 
-  <h3 align="center">Weather Now</h3>
+  <h3 align="center"><img src="https://user-images.githubusercontent.com/74038190/213844263-a8897a51-32f4-4b3b-b5c2-e1528b89f6f3.png" width="50px" /> &nbsp;Weather Now   <img src="https://user-images.githubusercontent.com/74038190/213844263-a8897a51-32f4-4b3b-b5c2-e1528b89f6f3.png" width="50px" /> &nbsp;</h3>
 
   <p align="center">
     基于机器学习的天气预测及可视化模型！
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>浏览文档 »</strong></a>
+    <a href="https://github.com/admin1025/WeatherNow"><strong>浏览文档 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/admin1025/WeatherNow">查看 Demo</a>
+    <a href="https://github.com/admin1025/WeatherNow">🔗查看 Demo</a>
     ·
     <a href="https://github.com/admin1025/WeatherNow/issues">反馈 Bug</a>
     ·
@@ -36,43 +26,29 @@
 </div>
 
 
+<div align="center">
+
+<a href="
+https://github.com/admin1025/WeatherNow/blob/main/docs/log.md
+"> :page_with_curl:更新日志 </a><a href="https://github.com/admin1025/WeatherNow/blob/main/docsproject-guidelines.md">:clipboard:项目规范</a>
+</div>
 
 
 
 
 <div id="top"></div>
-<!--
-*** 感谢查看我们的最佳 README 模板，如果你有好的建议，请复刻（fork）本仓库并且创建一个
-*** 拉取请求（pull request），或者直接创建一个带「enhancement」标签的议题（issue）。
-*** 不要忘记给该项目点一个 star！
-*** 再次感谢！现在快去创建一些了不起的东西吧！:D
--->
-
-
-
-<!-- 项目 SHIELDS -->
-<!--
-*** 我们使用了 markdown 「参考风格」的链接以便于阅读。
-*** 参考链接是用方括号 [ ] 包围起来的，而非 圆括号 ( )。
-*** 请到文档末尾查看 contributors-url、forks-url 等变量的声明。这是一种可选的简洁语法，你可能会想要使用。
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
  关于本项目
 
-[![产品截图][product-screenshot]](https://example.com)
 
+![image](https://github.com/admin1025/WeatherNow/blob/main/images/loading.gif)
 GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于本地化和网络爬虫进行的，所以我创建了这个Repository。我们的项目基于机器学习的随机森林模型对天气进行预测，并且通过Streamlit Cloud 部署到服务器端。
+<!---->
 
-以下是原因：
-* 希望
-* 你不应该一遍又一遍地做重复的工作，比如每次都从头编写一个 README
-* 你应该在未来的生活中始终遵循 DRY 原则 :smile:
 
 当然，没有一个Repository可以满足所有人的要求，因为你的需求可能与众不同。所以我们会在未来添加更多内容。你也可以通过复刻（fork）本仓库并且创建一个拉取请求（pull request）或者创建议题（issue）来向我们提出建议。感谢所有帮助我们扩充本仓库的贡献者！
 
 
-如果你对我的网站感兴趣，欢迎访问我的线上网站[:rainbow:Weather Now](https://weathernowpublic.streamlit.app/) 来开始。
+如果你对我的网站感兴趣，欢迎访问我的线上网站[🌦️Weather Now](https://weathernowpublic.streamlit.app/) 来开始。
 
 
 
@@ -209,16 +185,18 @@ tian5784879@gmail.com
 
 <!-- MARKDOWN 链接 & 图片 -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/BreakingAwful/Best-README-Template-zh.svg?style=for-the-badge
-[contributors-url]: https://github.com/BreakingAwful/Best-README-Template-zh/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/BreakingAwful/Best-README-Template-zh.svg?style=for-the-badge
-[forks-url]: https://github.com/BreakingAwful/Best-README-Template-zh/network/members
-[stars-shield]: https://img.shields.io/github/stars/BreakingAwful/Best-README-Template-zh.svg?style=for-the-badge
-[stars-url]: https://github.com/BreakingAwful/Best-README-Template-zh/stargazers
-[issues-shield]: https://img.shields.io/github/issues/BreakingAwful/Best-README-Template-zh.svg?style=for-the-badge
-[issues-url]: https://github.com/BreakingAwful/Best-README-Template-zh/issues
-[license-shield]: https://img.shields.io/github/license/BreakingAwful/Best-README-Template-zh.svg?style=for-the-badge
-[license-url]: https://github.com/BreakingAwful/Best-README-Template-zh/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/admin1025/WeatherNow.svg?style=for-the-badge
+[contributors-url]: https://github.com/admin1025/WeatherNow/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/admin1025/WeatherNow.svg?style=for-the-badge
+[forks-url]: https://github.com/Badmin1025/WeatherNow/network/members
+[stars-shield]: https://img.shields.io/github/stars/admin1025/WeatherNow.svg?style=for-the-badge
+[stars-url]: https://github.com/admin1025/WeatherNow/stargazers
+[issues-shield]: https://img.shields.io/github/issues/admin1025/WeatherNow.svg?style=for-the-badge
+[issues-url]: https://github.com/admin1025/WeatherNow/issues
+[license-shield]: https://img.shields.io/github/license/admin1025/WeatherNow.svg?style=for-the-badge
+[license-url]: https://github.com/admin1025/WeatherNow/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
+
+
