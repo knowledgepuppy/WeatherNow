@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Time: 2024.11.10
+# @Time: 2024.11.11
 # @Author: R
 # @File: Main.py
 import joblib
@@ -51,15 +51,7 @@ from pyecharts import options as opts
 from streamlit_echarts import st_echarts
 # 创建一个Line对象
 my_data=pd.DataFrame({"0":all_high_t,"1":all_low_t})
-line_chart = (
-    Line()
-    .add_xaxis(xaxis_data=[i for i in range(1,7)])  # x轴
-    .add_yaxis("温度", y_axis=my_data['1'])  # y轴
-    .set_global_opts(
-        title_opts=opts.TitleOpts(title="自定义温度预测"),
-        yaxis_opts=opts.AxisOpts(name="温度 (°C)", axislabel_opts=opts.LabelOpts(formatter="{value} °C"))
-    )
-)
+
 
 options = {
     "title": {"text": "折线图堆叠"},
@@ -94,10 +86,26 @@ options = {
 
 
 
+from streamlit_option_menu import option_menu
 
 st.markdown("# 长沙未来七天天气预测")
 #st_echarts(options=line_chart.dump_options())
 st_echarts(options=options, height="400px")
+with st.sidebar:
+    selected = option_menu(
+    menu_title = "Main Menu",
+    options = ["Home","Warehouse","Query Optimization and Processing","Contact","Projects"],
+    icons = ["house","gear","activity","snowflake","envelope"],
+    menu_icon = "cast",
+    default_index = 0,
+    #orientation = "horizontal",
+)
+    if selected == "Home":
+        st.title(f"You Have selected {selected}")
+    if selected == "Projects":
+        st.title(f"You Have selected {selected}")
+    if selected == "Contact":
+        st.title(f"You Have selected {selected}")
 st.balloons()
 st.snow()
 

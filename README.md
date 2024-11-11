@@ -7,3 +7,4 @@
 
 
 [更新日志](/docs/log.md)
+[项目规范](/docs/project-guidelines.md)

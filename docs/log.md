@@ -22,3 +22,6 @@
 ## 2024.11.10 commit 9
 >* 优化了模型部分参数
 >* 使用streamlit进行可视化
+## 2024.11.11 commit 10
+>* 新增了streamlit多种侧边控件
+>* 新增了streamlit进入动画
