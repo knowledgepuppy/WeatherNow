@@ -2,11 +2,11 @@
  
 [![GitHub stars](https://img.shields.io/github/stars/admin1025/WeatherNow.svg?style=social&label=Stars)](https://github.com/admin1025/WeatherNow/stargazers)[![GitHub forks](https://img.shields.io/github/forks/admin1025/WeatherNow.svg?style=social&label=Fork)](https://github.com/admin1025/WeatherNow/network/members)[![GitHub watchers](https://img.shields.io/github/watchers/admin1025/WeatherNow.svg?style=social&label=Watch)](https://github.com/admin1025/WeatherNow/watchers)[![GitHub followers](https://img.shields.io/github/followers/admin1025.svg?style=social&label=Follow)](https://github.com/admin1025?tab=followers)
 
-[![GitHub issues](https://img.shields.io/github/issues/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/issues)[![GitHub license](https://img.shields.io/github/license/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/blob/master/LICENSE)[![GitHub last commit](https://img.shields.io/github/last-commit/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/commits)[![GitHub release](https://img.shields.io/github/release/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/releases)[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow)[![Hits](https://hitcount.admin1025.top?u=admin1025&r=WeatherNow)](https://github.com/admin1025/hit-count)
+[![GitHub issues](https://img.shields.io/github/issues/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/issues)[![GitHub license](https://img.shields.io/github/license/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/blob/master/LICENSE)[![GitHub last commit](https://img.shields.io/github/last-commit/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/commits)[![GitHub release](https://img.shields.io/github/release/admin1025/WeatherNow.svg)](https://github.com/admin1025/WeatherNow/releases)
 
 
 
-[更新日志](/docs/log.md)
+[更新日志](/docs/log.md)  
 [项目规范](/docs/project-guidelines.md)
 
 
@@ -19,26 +19,22 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template-zh</h3>
+  <h3 align="center">Weather Now</h3>
 
   <p align="center">
-    让你快速开始构建项目的最佳 README 模板！
+    基于机器学习的天气预测及可视化模型！
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>浏览文档 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">查看 Demo</a>
+    <a href="https://github.com/admin1025/WeatherNow">查看 Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">反馈 Bug</a>
+    <a href="https://github.com/admin1025/WeatherNow/issues">反馈 Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">请求新功能</a>
+    <a href="https://github.com/admin1025/WeatherNow/issues">请求新功能</a>
   </p>
 </div>
-## 项目计划
 
-- [x] #739
-- [x] https://github.com/octo-org/octo-repo/issues/740
-- [ ] Add delight to the experience when all tasks are complete :tada:
 
 
 
@@ -61,49 +57,7 @@
 *** 请到文档末尾查看 contributors-url、forks-url 等变量的声明。这是一种可选的简洁语法，你可能会想要使用。
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-
-
-
-
-
-
-<!-- 目录 -->
-<details>
-  <summary>目录</summary>
-  <ol>
-    <li>
-      <a href="#关于本项目">关于本项目</a>
-      <ul>
-        <li><a href="#构建工具">构建工具</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#开始">开始</a>
-      <ul>
-        <li><a href="#依赖">依赖</a></li>
-        <li><a href="#安装">安装</a></li>
-      </ul>
-    </li>
-    <li><a href="#使用方法">使用方法</a></li>
-    <li><a href="#路线图">路线图</a></li>
-    <li><a href="#贡献">贡献</a></li>
-    <li><a href="#许可证">许可证</a></li>
-    <li><a href="#联系我们">联系我们</a></li>
-    <li><a href="#致谢">致谢</a></li>
-  </ol>
-</details>
-[toc]
-
-
-<!-- 关于本项目 -->
  关于本项目
 
 [![产品截图][product-screenshot]](https://example.com)
@@ -120,7 +74,7 @@ GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于�
 
 如果你对我的网站感兴趣，欢迎访问我的线上网站[:rainbow:Weather Now](https://weathernowpublic.streamlit.app/) 来开始。
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
+
 
 
 
@@ -136,7 +90,6 @@ $ pip install moudelname
 * [Sklearn](https://vuejs.org/)
 
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
 
 
 
@@ -148,31 +101,34 @@ $ pip install moudelname
 
 ### 依赖
 
-这只是一个列出软件依赖和安装方法的例子。
-* npm
+本项目完全由Python构建，请你确保正确安装了Python。
+为避免Pypi兼容性，你的Python版本应在**3.9及以上**。
+你可以通过以下方式查看你的Python版本
+* Power Shell
   ```sh
-  npm install npm@latest -g
+  python --version​
+  ```
+* Python
+  ```sh
+  import sys
+  #sys模块提供了一系列有关Python运行环境的变量和函数。
+  print(sys.version)
   ```
 
 ### 安装
 
 _下面是一个指导你的受众如何安装和配置你的应用的例子。这个模板不需要任何外部依赖或服务。_
 
-1. 在 [https://example.com](https://example.com) 获取一个免费的 API Key。
+1. 在 [`Streamlit Could`](https://share.streamlit.io/) 获取一个免费的 API Key。
 2. 克隆本仓库
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
-3. 安装 NPM 包
-   ```sh
-   npm install
-   ```
-4. 在 `config.js` 中填写你的 API
+3. 在 `Streamlit Could` 中填写你的 API
    ```js
    const API_KEY = '填写你的 API';
    ```
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
 
 
 
@@ -183,24 +139,25 @@ _下面是一个指导你的受众如何安装和配置你的应用的例子。�
 
 _转到 [文档](https://example.com) 查看更多示例_
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
+
 
 
 
 <!-- 路线图 -->
-## 路线图
+## 项目更新
 
 - [x] 添加更新日志
-- [x] 添加「返回顶部」链接
-- [ ] 添加额外的模板和示例
-- [ ] 添加「组件」文档，以便更容易复制和粘贴各个部分
-- [ ] 多语种支持
-    - [x] 中文
-    - [ ] 西班牙语
+- [x] 使用 Radom Frost 进行模型训练
+- [x] 使用Streamlit进行数据可视化
+- [X] 使用Streamlit Cloud进行服务器部署
+- [ ] 进一步优化可视化界面
+    - [x] 增加侧边栏控件
+    - [x] 增加开屏动画
+    - [ ] 增加多种数据展示图样
+- [ ] 优化模型超参数
 
-到 [open issues](https://github.com/othneildrew/Best-README-Template/issues) 页查看所有请求的功能 （以及已知的问题）。
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
+到 [open issues](https://github.com/admin1025/WeatherNow/issues) 页查看所有请求的功能 （以及已知的问题）。
 
 
 
@@ -217,9 +174,6 @@ _转到 [文档](https://example.com) 查看更多示例_
 4. 推送到该分支 (`git push origin feature/AmazingFeature`)
 5. 创建一个拉取请求（Pull Request）
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
-
-
 
 <!-- 许可证 -->
 ## 许可证
@@ -227,34 +181,27 @@ _转到 [文档](https://example.com) 查看更多示例_
 根据 MIT 许可证分发。打开 [LICENSE.txt](LICENSE.txt) 查看更多内容。
 
 
-<p align="right">(<a href="#top">返回顶部</a>)</p>
 
 
-
+tian5784879@gmail.com
 <!-- 联系我们 -->
 ## 联系我们
+<div align=center>@author:R  
+<div align=center><img src="https://workspace.google.com/lp/static/images/logo-gmail.png?fingerprint=c2eaf4aae389c3f885e97081bb197b97" alt="tian5784879@gmail.com"  width="15" height="15">tian5784879@gmail.com</div>
 
-你的名字 - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-项目链接: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">返回顶部</a>)</p>
+项目链接: [https://github.com/admin1025/WeatherNow](https://github.com/admin1025/WeatherNow)
+</div>
 
 
 
 <!-- 致谢 -->
 ## 致谢
 
-在这里列出你觉得有用的资源，并以此致谢。我已经添加了一些我喜欢的资源，以便你可以快速开始！
+这个项目的可视化界面的大部分组件主要来源于[Streamlit Gallery](https://streamlit.io/gallery),感谢为开源做出贡献的作者。
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [GW Quickview](https://gw-quickview.streamlit.app/)
+* [30Day of Streamlit](https://30days.streamlit.app/)
+
 
 <p align="right">(<a href="#top">返回顶部</a>)</p>
 
