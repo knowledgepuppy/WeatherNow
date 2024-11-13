@@ -29,8 +29,7 @@
 <div align="center">
 
 <a href="
-https://github.com/admin1025/WeatherNow/blob/main/docs/log.md
-"> :page_with_curl:更新日志 </a><a href="https://github.com/admin1025/WeatherNow/blob/main/docsproject-guidelines.md">:clipboard:项目规范</a>
+https://github.com/admin1025/WeatherNow/blob/main/docs/%7Flog.md"> :page_with_curl:更新日志 </a><a href="https://github.com/admin1025/WeatherNow/blob/main/docs/project-guidelines.md">:clipboard:项目规范</a>
 </div>
 
 
@@ -40,7 +39,7 @@ https://github.com/admin1025/WeatherNow/blob/main/docs/log.md
  关于本项目
 
 
-![image](https://github.com/admin1025/WeatherNow/blob/main/images/loading.gif)
+![image](https://github.com/admin1025/WeatherNow/main/images/loading.gif)
 GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于本地化和网络爬虫进行的，所以我创建了这个Repository。我们的项目基于机器学习的随机森林模型对天气进行预测，并且通过Streamlit Cloud 部署到服务器端。
 <!---->
 
@@ -51,15 +50,56 @@ GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于�
 如果你对我的网站感兴趣，欢迎访问我的线上网站[🌦️Weather Now](https://weathernowpublic.streamlit.app/) 来开始。
 
 
+## 功能
+* **实时天气查询**：获取全球各城市的当前天气。
+* **机器学习预测**：使用随机森林算法训练模型并拟合数据
+* **天气详细信息**：显示温度、湿度、气压、风速等。
+* **简洁易用**：友好的用户界面和交互体验。
+
+## 技术栈
+* **前端**：HTML, CSS, JavaScript
+* **后端**：Python
+* **API**：Streamlit API 
+  
+<!-- 使用方法 示例 -->
+## 项目架构
+
+### 软件结构规范
+WeatherNow 项目符合现代 Web 开发的最佳实践，结构简洁清晰、模块化设计良好、易于扩展和维护。通过分离关注点、合理的 API 密钥管理以及清晰的文档，项目不仅具备高可用性和安全性，同时也便于开发者扩展和社区贡献。
+
+项目的主体结构由以下几个类构成：
+>* GetData
+>* TrainDataProcess
+>* Model
+>* Visualization
+
+
+_转到 [文档](https://example.com) 查看更多介绍_
+
+### 文件规范
+我们遵循了 Github 项目：[pythonic-project-guidelines](https://github.com/pyloong/pythonic-project-guidelines)的规范要求，对项目文件结构构成如下：
+> WeatherNow/
+├── db              
+├── src  
+├ &emsp;    ├──lib
+├ &emsp;    ├──main\.py
+├── images        
+├── test       
+├── README\.md    
+
+_转到 [project-guidelines](/docs/project-guidelines.md) 查看更多介绍_
+
+
 
 
 
 ### 构建工具
 
-如果你尝试本地部署本项目，请确保你正确安装了以下这些模块，你可以通过
+如果你尝试本地部署本项目，请确保你正确安装了以下这些模块，你可以通过pip来安装这些模块。
 ```python
 $ pip install moudelname
 ```
+
 
 * [Streamlit](https://nextjs.org/)
 * [Requests](https://reactjs.org/)
@@ -93,27 +133,24 @@ $ pip install moudelname
 
 ### 安装
 
-_下面是一个指导你的受众如何安装和配置你的应用的例子。这个模板不需要任何外部依赖或服务。_
+_下面是一个指导你如何安装和配置你的应用的例子。这个模板不需要任何外部依赖或服务。_
 
 1. 在 [`Streamlit Could`](https://share.streamlit.io/) 获取一个免费的 API Key。
 2. 克隆本仓库
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/admin1025/WeatherNow.git
    ```
 3. 在 `Streamlit Could` 中填写你的 API
    ```js
-   const API_KEY = '填写你的 API';
+   const API_KEY = 'API';
+   ```
+4. 使用命令行工具启动项目
+   ```js
+   streamlit run /yourpath/src/main.py
    ```
 
 
 
-
-<!-- 使用方法 示例 -->
-## 使用方法
-
-在这里你可以展示项目的使用方法。把附加的截图、代码示例和演示放在这里也很不错。你也可以用链接引用其他资源。
-
-_转到 [文档](https://example.com) 查看更多示例_
 
 
 
@@ -156,10 +193,6 @@ _转到 [文档](https://example.com) 查看更多示例_
 
 根据 MIT 许可证分发。打开 [LICENSE.txt](LICENSE.txt) 查看更多内容。
 
-
-
-
-tian5784879@gmail.com
 <!-- 联系我们 -->
 ## 联系我们
 <div align=center>@author:R  
@@ -196,7 +229,5 @@ tian5784879@gmail.com
 [license-shield]: https://img.shields.io/github/license/admin1025/WeatherNow.svg?style=for-the-badge
 [license-url]: https://github.com/admin1025/WeatherNow/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
-
-
+[linkedin-url]: https://linkedin.com/in/othneildrew
