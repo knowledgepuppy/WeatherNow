@@ -18,8 +18,6 @@ def remove_units(data):
     cleaned_data = []
     for item in data:
         #三元表达式
-        # 丢失数据都取2
-        # 这么做 MAE=3.6021
         item = "3" if item == "-" else item
         item = "2" if item == "Tr" else item
         if isinstance(item, str):

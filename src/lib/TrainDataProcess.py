@@ -23,8 +23,7 @@ def ProcessData(city_idx):
         imputed_X_test 预测数据集]
     """
     # 用近几年的数据做训练集
-    # 如 [1,1], [20, 0]就是用2019年的今天的20天前到2019年的今天数据做训练集
-    # 写入csv
+
     temp=10
     data2csv([1, 1], [temp, 0], "weather_train_train.csv",city_idx)
     data2csv([1, 1], [0, temp], "weather_train_valid.csv",city_idx)
