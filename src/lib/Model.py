@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
-# @Time: 2024.11.10
+# @Time: 2024.11.14
 # @Author: R
 # @File: GetModel.py
-# 功能：使用随机森林算法训练模型并本地存取
 from sklearn.ensemble import RandomForestRegressor
 import joblib
 from sklearn.metrics import mean_absolute_error
-from lib.TrainDataProcess import ProcessData
+from src.lib.TrainDataProcess import ProcessData
 
 
 # 训练并保存模型
-def GetModel(a="Model.pkl"):
+def GetModel(city_idx,a="Model.pkl"):
     """
     :param a: 模型文件名
     :return:
@@ -18,7 +17,7 @@ def GetModel(a="Model.pkl"):
         X_test: 预测数据集]
     """
     # 取到数据
-    [X_train, X_valid, y_train, y_valid, X_test] = ProcessData()
+    [X_train, X_valid, y_train, y_valid, X_test] = ProcessData(city_idx=city_idx)
     # 此处用XGB模型，不过有bug，弃用
     # 随机树森林模型
     model = RandomForestRegressor(random_state=0, n_estimators=300)
@@ -29,6 +28,6 @@ def GetModel(a="Model.pkl"):
     # 用MAE评估
     score = mean_absolute_error(y_valid, preds)
     # 保存模型到本地
-    joblib.dump(model, a)
+    joblib.dump(model, filename="Model.pkl")
     # 返回MAE
     return [score, X_test]

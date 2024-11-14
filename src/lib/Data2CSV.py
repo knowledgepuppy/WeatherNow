@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# @Time: 2024.11.10
+# @Time: 2024.11.14
 # @Author:R
 # @File:Data2CSV.py
 # 功能: 转换天气数据为CSV文件
 
 from lxml import etree
-from lib.GetData import GetData
+from src.lib.GetData import GetData
 import csv
 import re
 from datetime import datetime,timedelta
@@ -79,8 +79,9 @@ def data2csv(years,days,filename):
     cleaned_data = remove_units(data)
 
     rows = [cleaned_data[i:i+9] for i in range(0, len(cleaned_data), 9)]
-
-    with open(filename, 'w', newline='') as file:
+    path="db/"+str(filename)
+    print(path)
+    with open(path, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Time", "Ave_t", "Max_t", "Min_t", "Prec", "SLpress", "Winddir", "Windsp", "Cloud"])
         writer.writerows(rows)
