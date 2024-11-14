@@ -17,7 +17,7 @@
     <a href="https://github.com/admin1025/WeatherNow"><strong>浏览文档 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/admin1025/WeatherNow">🔗查看 Demo</a>
+    <a href="https://weathernowpublic.streamlit.app/">🔗查看 Demo</a>
     ·
     <a href="https://github.com/admin1025/WeatherNow/issues">反馈 Bug</a>
     ·
@@ -28,15 +28,13 @@
 
 <div align="center">
 
-<a href="
-https://github.com/admin1025/WeatherNow/blob/main/docs/%7Flog.md"> :page_with_curl:更新日志 </a><a href="https://github.com/admin1025/WeatherNow/blob/main/docs/project-guidelines.md">:clipboard:项目规范</a>
+
+[:page_with_curl:更新日志](https://github.com/admin1025/WeatherNow/blob/main/docs/%7Flog.md)[:clipboard:项目规范](https://github.com/admin1025/WeatherNow/blob/main/docs/project-guidelines.md)
+
 </div>
-
-
-
-
 <div id="top"></div>
- 关于本项目
+
+**关于本项目**
 
 
 ![image](https://github.com/admin1025/WeatherNow/main/images/loading.gif)
@@ -49,6 +47,7 @@ GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于�
 
 如果你对我的网站感兴趣，欢迎访问我的线上网站[🌦️Weather Now](https://weathernowpublic.streamlit.app/) 来开始。
 
+[toc]
 
 ## 功能
 * **实时天气查询**：获取全球各城市的当前天气。
@@ -67,25 +66,30 @@ GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于�
 ### 软件结构规范
 WeatherNow 项目符合现代 Web 开发的最佳实践，结构简洁清晰、模块化设计良好、易于扩展和维护。通过分离关注点、合理的 API 密钥管理以及清晰的文档，项目不仅具备高可用性和安全性，同时也便于开发者扩展和社区贡献。
 
-项目的主体结构由以下几个类构成：
->* GetData
->* TrainDataProcess
->* Model
->* Visualization
+本项目大体上采用了分层系统风格架构。
+总体分为**表示层**，**应用层**，**服务层**，**数据访问层**。
+层与层之前不能直接进行互通，非相邻分层之间不可以进行数据互通，只可以进行迭代访问。
+```
+表示层： 负责处理用户界面和用户交互。例如，网页或移动应用的前端界面。
+应用层： 包含系统的业务逻辑，处理用户请求并执行相关的操作。
+服务层： 提供应用层所需的特定服务，如认证或数据转换服务。
+数据访问层： 负责与数据库或其他持久性存储进行交互。
+```
 
 
-_转到 [文档](https://example.com) 查看更多介绍_
+_转到 [SoftwareArchitecture](docs/SoftwareArchitecture.md) 查看更多介绍_
 
 ### 文件规范
 我们遵循了 Github 项目：[pythonic-project-guidelines](https://github.com/pyloong/pythonic-project-guidelines)的规范要求，对项目文件结构构成如下：
 > WeatherNow/
 ├── db              
 ├── src  
-├ &emsp;    ├──lib
-├ &emsp;    ├──main\.py
+├ &emsp;    ├──lib  
+├ &emsp;    ├──main\.py  
 ├── images        
 ├── test       
 ├── README\.md    
+├── VISUALIZATION\.py
 
 _转到 [project-guidelines](/docs/project-guidelines.md) 查看更多介绍_
 
@@ -93,7 +97,7 @@ _转到 [project-guidelines](/docs/project-guidelines.md) 查看更多介绍_
 
 
 
-### 构建工具
+## 构建工具
 
 如果你尝试本地部署本项目，请确保你正确安装了以下这些模块，你可以通过pip来安装这些模块。
 ```python
@@ -195,7 +199,13 @@ _下面是一个指导你如何安装和配置你的应用的例子。这个模�
 
 <!-- 联系我们 -->
 ## 联系我们
-<div align=center>@author:R  
+
+<div align=center>
+
+<a herf="https://github.com/admin1025"><img src="https://avatars.githubusercontent.com/u/116926526?s=96&v=4">
+
+@author:R  
+
 <div align=center><img src="https://workspace.google.com/lp/static/images/logo-gmail.png?fingerprint=c2eaf4aae389c3f885e97081bb197b97" alt="tian5784879@gmail.com"  width="15" height="15">tian5784879@gmail.com</div>
 
 项目链接: [https://github.com/admin1025/WeatherNow](https://github.com/admin1025/WeatherNow)
@@ -206,10 +216,13 @@ _下面是一个指导你如何安装和配置你的应用的例子。这个模�
 <!-- 致谢 -->
 ## 致谢
 
-这个项目的可视化界面的大部分组件主要来源于[Streamlit Gallery](https://streamlit.io/gallery),感谢为开源做出贡献的作者。
+此项目的可视化模板和对streamlit部署环境处理主要灵感来源于作者`JuneWaySue`
+此项目的可视化界面的大部分组件主要来源于[Streamlit Gallery](https://streamlit.io/gallery)，感谢为开源做出贡献的作者。
 
 * [GW Quickview](https://gw-quickview.streamlit.app/)
 * [30Day of Streamlit](https://30days.streamlit.app/)
+* [JuneWaySue](https://github.com/JuneWaySue)
+* [Streamlit中文文档](https://www.streamlit.org.cn/)
 
 
 <p align="right">(<a href="#top">返回顶部</a>)</p>

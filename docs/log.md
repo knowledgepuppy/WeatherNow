@@ -38,3 +38,5 @@
 >* 新增了requirements.txt文件
 >* 更改所有的path变量为相对路径
 >* 进行仓库的服务器部署
+## 2024.11.14 commit 16
+>* 新增 SoftwareArchitecture.md 文档
