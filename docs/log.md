@@ -42,3 +42,5 @@
 >* 新增 SoftwareArchitecture.md 文档
 ## 2024.11.14 commit 17
 >* 修复因部署导致的时区问题
+## 2024.11.27 commit 18
+>* 使用折叠文本精简了 README.md 文档 [#2](https://github.com/admin1025/WeatherNow/issues/2)
