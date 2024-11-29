@@ -17,11 +17,11 @@
     <a href="https://github.com/admin1025/WeatherNow/blob/main/README.md"><strong>浏览文档 »</strong></a>
     <br />
     <br />
-    <a href="https://weathernow-android.streamlit.app/">🔗查看 Demo</a>
+    <a href="https://weathernow-android.streamlit.app/">🔗 查看 Demo</a>
     ·
-    <a href="https://github.com/admin1025/WeatherNow/issues">反馈 Bug</a>
+    <a href="https://github.com/admin1025/WeatherNow/issues">🐞 反馈 Bug</a>
     ·
-    <a href="https://github.com/admin1025/WeatherNow/issues">请求新功能</a>
+    <a href="https://github.com/admin1025/WeatherNow/issues">✨ 请求新功能</a>
   </p>
 </div>
 
@@ -29,7 +29,7 @@
 <div align="center">
 
 
-[:page_with_curl:更新日志](https://github.com/admin1025/WeatherNow/blob/main/docs/%7Flog.md)[:clipboard:项目规范](https://github.com/admin1025/WeatherNow/blob/main/docs/project-guidelines.md)
+[:page_with_curl: 更新日志](https://github.com/admin1025/WeatherNow/blob/main/docs/%7Flog.md)[ :clipboard: 项目规范](https://github.com/admin1025/WeatherNow/blob/main/docs/project-guidelines.md)
 
 </div>
 <div id="top"></div>
@@ -49,19 +49,19 @@ GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于�
 
 [toc]
 
-## 功能
+## ✨ 功能
 * **实时天气查询**：获取全球各城市的当前天气。
 * **机器学习预测**：使用随机森林算法训练模型并拟合数据
 * **天气详细信息**：显示温度、湿度、气压、风速等。
 * **简洁易用**：友好的用户界面和交互体验。
 
-## 技术栈
+## ⌨️ 技术栈
 * **前端**：HTML, CSS, JavaScript
 * **后端**：Python
 * **API**：Streamlit API 
   
 <!-- 使用方法 示例 -->
-## 项目架构
+## 📦 项目架构
 <details>
 
 <summary>
@@ -113,9 +113,9 @@ _转到 [project-guidelines](/docs/project-guidelines.md) 查看更多介绍_
 
 
 
-## 构建工具
+## 🚀 构建工具
 
-如果你尝试本地部署本项目，请确保你正确安装了以下这些模块，你可以通过pip来安装这些模块。
+如果你尝试本地部署本项目，请确保你正确安装了以下这些模块，你可以通过`pip`来安装这些模块。
 ```python
 $ pip install moudelname
 ```
@@ -130,12 +130,12 @@ $ pip install moudelname
 
 
 <!-- 开始 -->
-## 开始
+## 🏃 开始
 
 这是一份在本地构建项目的指导的例子。
 要获取本地副本并且配置运行，你可以按照下面的示例步骤操作。
 
-### 依赖
+### 🛠️ 依赖
 
 本项目完全由Python构建，请你确保正确安装了Python。
 为避免Pypi兼容性，你的Python版本应在**3.9及以上**。
@@ -151,7 +151,7 @@ $ pip install moudelname
   print(sys.version)
   ```
 
-### 安装
+### 👨‍💻 安装
 
 _下面是一个指导你如何安装和配置你的应用的例子。这个模板不需要任何外部依赖或服务。_
 
@@ -177,7 +177,7 @@ _下面是一个指导你如何安装和配置你的应用的例子。这个模�
 
 
 <!-- 路线图 -->
-## 项目更新
+## 📝 项目更新
 
 - [x] 添加更新日志[#3](https://github.com/admin1025/WeatherNow/issues/3)
 - [x] 使用 Radom Frost 进行模型训练[#4](https://github.com/admin1025/WeatherNow/issues/4)
@@ -195,7 +195,7 @@ _下面是一个指导你如何安装和配置你的应用的例子。这个模�
 
 
 <!-- 贡献 -->
-## 贡献
+## ✍️ 贡献
 
 贡献让开源社区成为了一个非常适合学习、启发和创新的地方。你所做出的任何贡献都是**受人尊敬**的。
 
@@ -209,12 +209,12 @@ _下面是一个指导你如何安装和配置你的应用的例子。这个模�
 
 
 <!-- 许可证 -->
-## 许可证
+## 📃 许可证
 
 根据 MIT 许可证分发。打开 [LICENSE.txt](LICENSE.txt) 查看更多内容。
 
 <!-- 联系我们 -->
-## 联系我们
+## 🤝 联系我们
 
 <div align=center>
 
@@ -230,7 +230,7 @@ _下面是一个指导你如何安装和配置你的应用的例子。这个模�
 
 
 <!-- 致谢 -->
-## 致谢
+## 💛致谢
 
 此项目的可视化模板和对streamlit部署环境处理主要灵感来源于作者`JuneWaySue`  
 此项目的可视化界面的大部分组件主要来源于[Streamlit Gallery](https://streamlit.io/gallery)，感谢为开源做出贡献的作者。
