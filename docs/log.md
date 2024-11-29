@@ -58,3 +58,5 @@
 * 新增了 WeatherNow.exe 文件，使得构建依赖后可以一键安装
 ## 2024.11.29 commit 23
 * 新增了 Require.exe 进行依赖部署
+## 2024.11.29 commit 24
+* 更新了 README.md 对部署工具和安装工具的使用教程
