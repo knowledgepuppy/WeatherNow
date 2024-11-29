@@ -14,7 +14,7 @@
   <p align="center">
     基于机器学习的天气预测及可视化模型！
     <br />
-    <a href="https://github.com/admin1025/WeatherNow"><strong>浏览文档 »</strong></a>
+    <a href="https://github.com/admin1025/WeatherNow/blob/main/README.md"><strong>浏览文档 »</strong></a>
     <br />
     <br />
     <a href="https://weathernow-android.streamlit.app/">🔗查看 Demo</a>
