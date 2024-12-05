@@ -45,6 +45,7 @@ def main():
     st.sidebar.write(f'The current date time is {d} {t}')
     chart=st.sidebar.selectbox('Select Chart You Like',charts_mapping.keys(),index=st.session_state.random_chart_index)
     city=st.sidebar.selectbox('Select City You Like',st.session_state.city_mapping.keys(),index=st.session_state.random_city_index)
+    display_mode=st.sidebar.radio('选择你的显示模式',["Wide","Narrow"],index=1)
     color = st.sidebar.color_picker('Pick A Color You Like', '#520520')
     st.sidebar.write('The current color is', color)
 
@@ -53,13 +54,23 @@ def main():
     with st.container():
         st.markdown(f'### {city} Weather Forecast')
         forecastToday,df_forecastHours,df_forecastDays=get_city_weather(st.session_state.city_mapping[city],city)
-        col1,col2,col3,col4,col5,col6=st.columns(6)
-        col1.metric('Weather',forecastToday['weather'])
-        col2.metric('Temperature',forecastToday['temp'])
-        col3.metric('Body Temperature',forecastToday['realFeel'])
-        col4.metric('Humidity',forecastToday['humidity'])
-        col5.metric('Wind',forecastToday['wind'])
-        col6.metric('UpdateTime',forecastToday['updateTime'])
+        if display_mode=="Wide":   
+            col1,col2,col3,col4,col5,col6=st.columns(6)
+            col1.metric('Weather',forecastToday['weather'])
+            col2.metric('Temperature',forecastToday['temp'])
+            col3.metric('Body Temperature',forecastToday['realFeel'])
+            col4.metric('Humidity',forecastToday['humidity'])
+            col5.metric('Wind',forecastToday['wind'])
+            col6.metric('UpdateTime',forecastToday['updateTime'])
+        else:
+            col1,col2,col3,=st.columns(3)
+            col4,col5,col6=st.columns(3)
+            col1.metric('Weather',forecastToday['weather'])
+            col2.metric('Temperature',forecastToday['temp'])
+            col3.metric('Body Temperature',forecastToday['realFeel'])
+            col4.metric('Humidity',forecastToday['humidity'])
+            col5.metric('Wind',forecastToday['wind'])
+            col6.metric('UpdateTime',forecastToday['updateTime'])
         c1 = (
             Line()
             .add_xaxis(xaxis_data=df_forecastHours.index.to_list())
