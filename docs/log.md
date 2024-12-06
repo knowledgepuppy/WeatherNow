@@ -44,7 +44,7 @@
 ## 2024.11.14 commit 17
 * 修复因部署导致的时区问题
 ## 2024.11.27 commit 18
-* 使用折叠文本精简了 README.md 文档 [#2](https://github.com/admin1025/WeatherNow/issues/2)
+* 使用折叠文本精简了 README.md 文档 [#2](https://github.com/Tyxy-R/WeatherNow/issues/2)
 ## 2024.11.29 commit 19
 * 修复了 README.md 中查看文档超链错误
 * 修复了 README.md 中对issue的超链重复
@@ -62,3 +62,5 @@
 * 更新了 README.md 对部署工具和安装工具的使用教程
 ## 2024.12.6 commit 25
 * 对不同分辨率的 UI 界面新增了宽屏模式和窄屏模式
+## 2024.12.6 commit 26
+* 更新了域名后需要更新所有文档内的所有相关链接

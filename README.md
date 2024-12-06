@@ -5,7 +5,7 @@
 <!-- 项目 LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/admin1025/WeatherNow">
+  <a href="https://github.com/Tyxy-R/WeatherNow">
     <img src="images/logo/trans_bg.png" alt="Logo" width="300" height="300">
   </a>
 
@@ -14,14 +14,14 @@
   <p align="center">
     基于机器学习的天气预测及可视化模型！
     <br />
-    <a href="https://github.com/admin1025/WeatherNow/blob/main/README.md"><strong>浏览文档 »</strong></a>
+    <a href="https://github.com/Tyxy-R/WeatherNow/blob/main/README.md"><strong>浏览文档 »</strong></a>
     <br />
     <br />
     <a href="https://weathernow-android.streamlit.app/">🔗 查看 Demo</a>
     ·
-    <a href="https://github.com/admin1025/WeatherNow/issues">🐞 反馈 Bug</a>
+    <a href="https://github.com/Tyxy-R/WeatherNow/issues">🐞 反馈 Bug</a>
     ·
-    <a href="https://github.com/admin1025/WeatherNow/issues">✨ 请求新功能</a>
+    <a href="https://github.com/Tyxy-R/WeatherNow/issues">✨ 请求新功能</a>
   </p>
 </div>
 
@@ -29,7 +29,7 @@
 <div align="center">
 
 
-[:page_with_curl: 更新日志](https://github.com/admin1025/WeatherNow/blob/main/docs/%7Flog.md)[ :clipboard: 项目规范](https://github.com/admin1025/WeatherNow/blob/main/docs/project-guidelines.md)
+[:page_with_curl: 更新日志](https://github.com/Tyxy-R/WeatherNow/blob/main/docs/%7Flog.md)[ :clipboard: 项目规范](https://github.com/Tyxy-R/WeatherNow/blob/main/docs/project-guidelines.md)
 
 </div>
 <div id="top"></div>
@@ -37,7 +37,7 @@
 **关于本项目**
 
 
-![image](https://github.com/admin1025/WeatherNow/main/images/loading.gif)
+![image](https://github.com/Tyxy-R/WeatherNow/main/images/loading.gif)
 GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于本地化和网络爬虫进行的，所以我创建了这个Repository。我们的项目基于机器学习的随机森林模型对天气进行预测，并且通过Streamlit Cloud 部署到服务器端。
 <!---->
 
@@ -174,7 +174,7 @@ _转到 [requirements.txt](/requirements.txt) 查看所有你所应安装的模�
 
 1. 克隆本仓库
    ```sh
-   git clone https://github.com/admin1025/WeatherNow.git
+   git clone https://github.com/Tyxy-R/WeatherNow.git
    ```
 2. 使用命令行工具安装外部依赖
     ```
@@ -186,7 +186,7 @@ _转到 [requirements.txt](/requirements.txt) 查看所有你所应安装的模�
    ```
 ************************
 如果你对命令行不熟悉或者基于其他任何原因希望避免使用命令行，我们提供了[ WeatherNow.exe ](WeatherNow.exe)帮助你进行**一键安装**。你所需要的做的仅有：
-1. 从[ release ](https://github.com/admin1025/WeatherNow/releases)中下载我们最新的发行版本。
+1. 从[ release ](https://github.com/Tyxy-R/WeatherNow/releases)中下载我们最新的发行版本。
 2. 运行[ WeatherNow.exe ](WeatherNow.exe)
 3. **enjoy it** :smile:
 
@@ -200,18 +200,18 @@ _转到 [requirements.txt](/requirements.txt) 查看所有你所应安装的模�
 <!-- 路线图 -->
 ## 📝 项目更新
 
-- [x] 添加更新日志[#3](https://github.com/admin1025/WeatherNow/issues/3)
-- [x] 使用 Radom Frost 进行模型训练[#4](https://github.com/admin1025/WeatherNow/issues/4)
-- [x] 使用Streamlit进行数据可视化[#5](https://github.com/admin1025/WeatherNow/issues/5)
-- [X] 使用Streamlit Cloud进行服务器部署[#6](https://github.com/admin1025/WeatherNow/issues/6)
+- [x] 添加更新日志[#3](https://github.com/Tyxy-R/WeatherNow/issues/3)
+- [x] 使用 Radom Frost 进行模型训练[#4](https://github.com/Tyxy-R/WeatherNow/issues/4)
+- [x] 使用Streamlit进行数据可视化[#5](https://github.com/Tyxy-R/WeatherNow/issues/5)
+- [X] 使用Streamlit Cloud进行服务器部署[#6](https://github.com/Tyxy-R/WeatherNow/issues/6)
 - [ ] 进一步优化可视化界面
-    - [x] 增加侧边栏控件[#7](https://github.com/admin1025/WeatherNow/issues/7)
-    - [x] 增加开屏动画[#8](https://github.com/admin1025/WeatherNow/issues/8)
+    - [x] 增加侧边栏控件[#7](https://github.com/Tyxy-R/WeatherNow/issues/7)
+    - [x] 增加开屏动画[#8](https://github.com/Tyxy-R/WeatherNow/issues/8)
     - [ ] 增加多种数据展示图样
 - [ ] 优化模型超参数
 
 
-到 [open issues](https://github.com/admin1025/WeatherNow/issues) 页查看所有请求的功能 （以及已知的问题）。
+到 [open issues](https://github.com/Tyxy-R/WeatherNow/issues) 页查看所有请求的功能 （以及已知的问题）。
 
 
 
@@ -239,13 +239,13 @@ _转到 [requirements.txt](/requirements.txt) 查看所有你所应安装的模�
 
 <div align=center>
 
-<a herf="https://github.com/admin1025"><img src="https://avatars.githubusercontent.com/u/116926526?s=96&v=4">
+<a herf="https://github.com/Tyxy-R"><img src="https://avatars.githubusercontent.com/u/116926526?s=96&v=4">
 
 @author:R  
 
 <div align=center><img src="https://workspace.google.com/lp/static/images/logo-gmail.png?fingerprint=c2eaf4aae389c3f885e97081bb197b97" alt="tian5784879@gmail.com"  width="15" height="15">tian5784879@gmail.com</div>
 
-项目链接: [https://github.com/admin1025/WeatherNow](https://github.com/admin1025/WeatherNow)
+项目链接: [https://github.com/Tyxy-R/WeatherNow](https://github.com/Tyxy-R/WeatherNow)
 </div>
 
 
@@ -268,16 +268,16 @@ _转到 [requirements.txt](/requirements.txt) 查看所有你所应安装的模�
 
 <!-- MARKDOWN 链接 & 图片 -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/admin1025/WeatherNow.svg?style=for-the-badge
-[contributors-url]: https://github.com/admin1025/WeatherNow/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/admin1025/WeatherNow.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/Tyxy-R/WeatherNow.svg?style=for-the-badge
+[contributors-url]: https://github.com/Tyxy-R/WeatherNow/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Tyxy-R/WeatherNow.svg?style=for-the-badge
 [forks-url]: https://github.com/Badmin1025/WeatherNow/network/members
-[stars-shield]: https://img.shields.io/github/stars/admin1025/WeatherNow.svg?style=for-the-badge
-[stars-url]: https://github.com/admin1025/WeatherNow/stargazers
-[issues-shield]: https://img.shields.io/github/issues/admin1025/WeatherNow.svg?style=for-the-badge
-[issues-url]: https://github.com/admin1025/WeatherNow/issues
-[license-shield]: https://img.shields.io/github/license/admin1025/WeatherNow.svg?style=for-the-badge
-[license-url]: https://github.com/admin1025/WeatherNow/blob/master/LICENSE.txt
+[stars-shield]: https://img.shields.io/github/stars/Tyxy-R/WeatherNow.svg?style=for-the-badge
+[stars-url]: https://github.com/Tyxy-R/WeatherNow/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Tyxy-R/WeatherNow.svg?style=for-the-badge
+[issues-url]: https://github.com/Tyxy-R/WeatherNow/issues
+[license-shield]: https://img.shields.io/github/license/Tyxy-R/WeatherNow.svg?style=for-the-badge
+[license-url]: https://github.com/Tyxy-R/WeatherNow/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [product-screenshot]: images/screenshot.png
 [linkedin-url]: https://linkedin.com/in/othneildrew
