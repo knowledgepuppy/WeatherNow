@@ -13,10 +13,15 @@ from pyecharts.globals import ThemeType
 from pyecharts.commons.utils import JsCode
 from src.socket import find
 
+LOGO="images/logo/trans_bg.png"
 def main():
+
     global df_forecastDays
     st.set_page_config(page_title="天气预报",page_icon=":rainbow:",layout="wide",initial_sidebar_state="auto")
-    st.title('天气预报:heart:')
+    #html写入图片
+    st.sidebar.image(LOGO)
+
+    st.title('WeatherNow:heart:')
     st.markdown('<br>',unsafe_allow_html=True)
     st.markdown('<br>',unsafe_allow_html=True)
     charts_mapping={
@@ -45,32 +50,31 @@ def main():
     st.sidebar.write(f'The current date time is {d} {t}')
     chart=st.sidebar.selectbox('Select Chart You Like',charts_mapping.keys(),index=st.session_state.random_chart_index)
     city=st.sidebar.selectbox('Select City You Like',st.session_state.city_mapping.keys(),index=st.session_state.random_city_index)
-    display_mode=st.sidebar.radio('选择你的显示模式',["Wide","Narrow"],index=1)
+    display_mode=st.sidebar.radio('选择你的显示模式',["Wide","Narrow"],index=0)
     color = st.sidebar.color_picker('Pick A Color You Like', '#520520')
     st.sidebar.write('The current color is', color)
 
     st.markdown(f'# {city}')
 
     with st.container():
+        
         st.markdown(f'### {city} Weather Forecast')
-        forecastToday,df_forecastHours,df_forecastDays=get_city_weather(st.session_state.city_mapping[city],city)
+        forecastToday,df_forecastHours,df_forecastDays,df_yes=get_city_weather(st.session_state.city_mapping[city],city)
         if display_mode=="Wide":   
             col1,col2,col3,col4,col5,col6=st.columns(6)
             col1.metric('Weather',forecastToday['weather'])
-            col2.metric('Temperature',forecastToday['temp'])
+            #col2.metric('Temperature',forecastToday['temp'])
+            delta_temp=str(float(forecastToday['temp'].replace("°C",""))-float(df_yes[0]))+"°C"
+            col2.metric(label="Temperature", value=forecastToday['temp'], delta=delta_temp,delta_color="inverse")
             col3.metric('Body Temperature',forecastToday['realFeel'])
-            col4.metric('Humidity',forecastToday['humidity'])
+            #col4.metric('Humidity',forecastToday['humidity'])
+            delta_h=str(float(forecastToday['humidity'].replace("%",""))-float(df_yes[1]))+"%"
+            col4.metric('Humidity', value=forecastToday['humidity'], delta=delta_h,delta_color="inverse")
             col5.metric('Wind',forecastToday['wind'])
             col6.metric('UpdateTime',forecastToday['updateTime'])
         else:
-            col1,col2,col3,=st.columns(3)
-            col4,col5,col6=st.columns(3)
-            col1.metric('Weather',forecastToday['weather'])
-            col2.metric('Temperature',forecastToday['temp'])
-            col3.metric('Body Temperature',forecastToday['realFeel'])
-            col4.metric('Humidity',forecastToday['humidity'])
-            col5.metric('Wind',forecastToday['wind'])
-            col6.metric('UpdateTime',forecastToday['updateTime'])
+
+            st.dataframe(forecastToday,use_container_width=True)
         c1 = (
             Line()
             .add_xaxis(xaxis_data=df_forecastHours.index.to_list())
@@ -203,7 +207,11 @@ def get_city_weather(cityId,cityName):
             tmp['WindNight']=f"{i['windDirNight']}{i['windLevelNight']}级"
             forecastDays.append(tmp)
     df_forecastDays=pd.DataFrame(forecastDays).set_index('PredictDate')
-    return forecastToday,df_forecastHours,df_forecastDays
+    yes_h=df_forecastDays.iloc[0][1].replace("%", "")
+    temps =df_forecastDays.iloc[0][0].replace("°C", "").split("~")
+    yes_temp = (int(temps[0]) + int(temps[1])) / 2
+
+    return forecastToday,df_forecastHours,df_forecastDays,tuple([yes_temp,yes_h])
 
 
 class MyRandom:
