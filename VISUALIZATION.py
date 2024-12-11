@@ -115,10 +115,34 @@ def main():
             st.table(df_forecastHours.style.format({'Temperature':'{}°C','Body Temperature':'{}°C','Humidity':'{}%'}))
         with st.expander("7 Days Forecast Data",expanded=True):
             st.table(df_forecastDays)
+
+
+
     st.markdown(f'### {chart} Chart')
     df=get_chart_data(chart,st.session_state.my_random)
     #area报错
+    from pygwalker.api.streamlit import StreamlitRenderer
+    @st.cache_resource
+    def get_pyg_renderer() -> "StreamlitRenderer":
+        df = df_forecastHours
+        # If you want to use feature of saving chart config, set `spec_io_mode="rw"`
+        return StreamlitRenderer(df, spec="./gw_config.json", spec_io_mode="rw")
+
+
+    renderer = get_pyg_renderer()
+
+    renderer.explorer()
+    #df_forecastHours
+    #df_forecastHours.index
+    #df_forecastHours['Body Temperature']
+    #chart
+
     eval(f'st.{charts_mapping[chart]}(df{",use_container_width=True" if chart in ["Distplot","Altair"] else ""})' if chart != 'PyEchart' else f'st_echarts(options=df)')
+
+
+
+
+
     col1,col2=st.columns(2)
     video1,video2=get_video_bytes()
     col1.video(video1, format='video/mp4', start_time=2)
