@@ -124,6 +124,20 @@ def main():
     col1.video(video1, format='video/mp4', start_time=2)
     col2.video(video2, format='video/mp4')
 
+
+    st.markdown('<br>',unsafe_allow_html=True)
+    st.markdown('<br>',unsafe_allow_html=True)
+    st.markdown('### About The Project')
+    with st.expander("README"):
+        with open('README.md','r',encoding='utf-8') as f:
+            readme=f.read()
+            st.markdown(readme,unsafe_allow_html=True)
+    st.markdown('### More Infos')
+
+    st.markdown('More infos and ⭐ at https://github.com/Tyxy-R/WeatherNow',unsafe_allow_html=True)
+    st.markdown('<br>',unsafe_allow_html=True)
+    st.markdown('<br>',unsafe_allow_html=True)
+
 @st.cache_data(ttl=3600)
 def get_city_mapping():
     url='https://h5ctywhr.api.moji.com/weatherthird/cityList'
