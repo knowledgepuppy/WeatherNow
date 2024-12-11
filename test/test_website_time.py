@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# @Time: 2024.12.12
+# @Author: R
+# @File: test_website_time.py
 import requests
 import time
 import matplotlib.pyplot as plt
