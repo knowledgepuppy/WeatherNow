@@ -43,7 +43,10 @@ def main():
         # st.session_state.random_city_index=random.choice(range(len(st.session_state.city_mapping)))
         st.balloons()
         st.snow()
-    
+    music=st.sidebar.radio('Select Music You Like',['七里香','稻香'],index=random.choice(range(2)))
+    st.sidebar.write(f'正在播放 {music}-周杰伦 :musical_note:')
+    audio_bytes=get_audio_bytes(music)
+    st.sidebar.audio(audio_bytes, format='audio/mp3')
     d=st.sidebar.date_input('Date',st.session_state.date_time.date())
     t=st.sidebar.time_input('Time',st.session_state.date_time.time())
     t=f'{t}'.split('.')[0]
@@ -244,6 +247,12 @@ def get_chart_data(chart,my_random):
             ],
         }
         return options
+    
+def get_audio_bytes(music):
+    audio_file = open(f'music/{music}-周杰伦.mp3', 'rb')
+    audio_bytes = audio_file.read()
+    audio_file.close()
+    return audio_bytes
 
 main()
 
