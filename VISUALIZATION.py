@@ -12,6 +12,7 @@ import streamlit.components.v1 as components
 from pyecharts.globals import ThemeType
 from pyecharts.commons.utils import JsCode
 from src.socket import find
+from pygwalker.api.streamlit import StreamlitRenderer
 
 LOGO="images/logo/trans_bg.png"
 def main():
@@ -125,7 +126,7 @@ def main():
     
  
     #自定义
-    from pygwalker.api.streamlit import StreamlitRenderer
+
 
     def get_pyg_renderer() -> "StreamlitRenderer":
         try:
