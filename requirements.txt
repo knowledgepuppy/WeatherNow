@@ -10,3 +10,4 @@ scikit_learn==1.6.0
 seaborn==0.13.2
 streamlit==1.39.0
 streamlit_echarts==0.4.0
+pygwalker==0.4.9.13
