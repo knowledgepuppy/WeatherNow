@@ -397,7 +397,10 @@ plt.show()
 
 我们对于模型的拟合程度从**MAE**（平均绝对误差）的角度进行分析，这是一种衡量预测值与实际值之间差异的常用指标。
 
-除此以外，因为在线网站的特性，我们同时需要关注模型的**训练耗时**，即模型在接收到输入数据后生成预测结果所需的时间。这两个指标共同决定了模型在实际应用中的表现，既要保证预测的准确性，又要确保用户体验的流畅性。
+除此以外，因为在线网站的特性，我们同时需要关注模型的**训练耗时**，即模型在接收到输入数据后生成预测结果所需的时间。
+这两个指标共同决定了模型在实际应用中的表现，既要保证预测的准确性，又要确保用户体验的流畅性。
+
+*以下测试均在测试数据已**略去**从远程服务器中获取训练信息的响应时长。*
 
 #### MAE
 平均绝对误差（MAE，Mean Absolute Error）是衡量预测模型或估计方法准确度的指标之一。它反映了预测值与真实值之间的绝对误差的平均水平。MAE 的计算公式如下：
@@ -411,19 +414,149 @@ max_features='auto',  # 寻找最佳分割时要考虑的特征数量
 bootstrap=True,  # 构建树时是否使用自助样本
 n_jobs=-1  # 使用所有可用的核心进行并行处理
 ```
-其中最主要的参数便是`n_estimators=500`,他直接影响了系统进行模型训练时的质量和时长。考虑到在线网站的响应速度的要求特性，我们需要兼顾训练质量和响应时长二者的平衡。
-常用的参数调优方法有贝叶斯调优，网格搜索等。
+其中最主要的参数便是`n_estimators`,他直接影响了系统进行模型训练时的质量和时长。考虑到在线网站的响应速度的要求特性，我们需要兼顾训练质量和响应时长二者的平衡。
+常用的参数调优方法有**贝叶斯调优**，**网格搜索**等。
 
 
-_使用网格搜索优化后，我们的天数优化的结果是10天，MAE=3.6021（2024.11.14）_
+
 
 #### 训练耗时
+在使用 time 库对机器学习模型训练的耗时进行测量时，可以通过记录训练开始和结束时的时间点，并计算它们之间的时间差，来精确评估模型训练所需的时间。这种方法能够帮助开发者了解模型的训练效率，从而优化代码性能或选择更高效的算法与硬件配置。
 
 
-Heartrate 是一个 Python 的工具库，可以实时可视化 Python 程序的执行过程。我们使用Heartrate结合time模块对模型的响应速度进行评估。
-其次在随机森林模型中，我们需要适当减少决策树的数量和最大深度，来减少模型的运算量以增加运算速度
 
-_在大多数网络环境的综合速率大致在2.6s_
+#### 测试用例
+因为测试相对简单一次耗时相对较大，且返回值为列表形式。我们并没有使用装饰器进行测试，而是在test中新增了测试脚本[test_model.py](test_model.py)进行测试，不过这也使得我们的返回值更易被处理和可视化。
+
+测试功能：对模型的MAE和训练耗时进行测试。
+测试环境：Python 3.11.3
+测试时间：2024.12.10
+测试版本：version-1.2
+测试输入：`np.linspace(50, 1000, 50, dtype=int)`
+测试预期输出：`figure`中显示`n_estimators`与`MAE`、`Training Time`趋势
+```python
+
+import joblib
+import datetime as DT
+from src.lib.GetModel import GetModel
+import matplotlib.pyplot as plt
+import time
+import numpy as np
+
+# 定义n_estimators的范围
+n_estimators_range = np.linspace(50, 200, 50, dtype=int)
+mae_list = []
+time_list = []
+
+for n in n_estimators_range:
+    #没有使用装饰器
+    #此处需要更改GetModel函数进行测试
+    r,training_time = GetModel(n_estimators=n)
+    mae = r[0]
+    mae_list.append(mae)
+    time_list.append(training_time)
+    
+    print(f"n_estimators: {n}, MAE: {mae}, Training Time: {training_time} seconds")
+
+# 可视化MAE与n_estimators的关系
+plt.figure(figsize=(14, 7))
+
+plt.subplot(1, 2, 1)
+plt.plot(n_estimators_range, mae_list, marker='o', linestyle='-', color='b', label='MAE')
+plt.title('MAE vs n_estimators')
+plt.xlabel('n_estimators')
+plt.ylabel('MAE')
+plt.grid(True)
+plt.legend()
+
+plt.subplot(1, 2, 2)
+plt.plot(n_estimators_range, time_list, marker='o', linestyle='-', color='r', label='Training Time')
+plt.title('Training Time vs n_estimators')
+plt.xlabel('n_estimators')
+plt.ylabel('Training Time (seconds)')
+plt.grid(True)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# 读取保存的模型
+model = joblib.load('Model.pkl')
+
+# 最终预测结果
+preds = model.predict(r[1])
+```
+测试输出：
+
+![](/images/调优_1.png)
+
+
+
+测试功能：对模型的MAE和训练耗时进行测试。
+测试环境：Python 3.11.3
+测试版本：version-1.2
+测试时间：2024.12.10
+测试输入：`np.linspace(50, 200, 50, dtype=int)`,`长沙市`
+测试预期输出：`figure`中显示`n_estimators`与`MAE`、`Training Time`趋势
+```python
+
+import joblib
+import datetime as DT
+from src.lib.GetModel import GetModel
+import matplotlib.pyplot as plt
+import time
+import numpy as np
+
+# 定义n_estimators的范围
+n_estimators_range = np.linspace(50, 200, 50, dtype=int)
+mae_list = []
+time_list = []
+
+for n in n_estimators_range:
+    #没有使用装饰器
+    #此处需要更改GetModel函数进行测试
+    r,training_time = GetModel(n_estimators=n)
+    mae = r[0]
+    mae_list.append(mae)
+    time_list.append(training_time)
+    
+    print(f"n_estimators: {n}, MAE: {mae}, Training Time: {training_time} seconds")
+
+# 可视化MAE与n_estimators的关系
+plt.figure(figsize=(14, 7))
+
+plt.subplot(1, 2, 1)
+plt.plot(n_estimators_range, mae_list, marker='o', linestyle='-', color='b', label='MAE')
+plt.title('MAE vs n_estimators')
+plt.xlabel('n_estimators')
+plt.ylabel('MAE')
+plt.grid(True)
+plt.legend()
+
+plt.subplot(1, 2, 2)
+plt.plot(n_estimators_range, time_list, marker='o', linestyle='-', color='r', label='Training Time')
+plt.title('Training Time vs n_estimators')
+plt.xlabel('n_estimators')
+plt.ylabel('Training Time (seconds)')
+plt.grid(True)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# 读取保存的模型
+model = joblib.load('Model.pkl')
+
+# 最终预测结果
+preds = model.predict(r[1])
+```
+测试输出：
+
+![](/images/调优_2.png)
+
+_使用网格搜索优化后，我们设置`n_estimators`为80（2024.12.10）_
+_在大多数环境的综合训练耗时大致在0.1272s（2024.12.10）_
+_使用网格搜索优化后，MAE=11.2（2024.12.10）_
 
 ## 预期成果
 
