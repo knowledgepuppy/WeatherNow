@@ -102,13 +102,17 @@
 * 更新依赖冲突
 ## 2024.12.11 commit 45
 * 新增UML图#34
-## 2024.12.11 commit 46
+## 2024.12.12 commit 46
 * 移动了部分放置位置错误的引用资源
-## 2024.12.11 commit 47
+## 2024.12.12 commit 47
 * 更新了未来计划和文档的指向url
-## 2024.12.11 commit 48
+## 2024.12.12 commit 48
 * Create CODE_OF_CONDUCT.md
-## 2024.12.11 commit 49
+## 2024.12.12 commit 49
 * Create CONTRIBUTING.md
-## 2024.12.11 commit 50
+## 2024.12.12 commit 50
 * 更新补全开发日志
+## 2024.12.12 commit 51
+* Merge branch 'main' of https://github.com/Tyxy-R/WeatherNow
+## 2024.12.12 commit 52
+* 增强代码规范

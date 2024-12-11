@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# @Time: 2024.12.12
+# @Author: R
+# @File: test_GetData.py
 import unittest
 from unittest.mock import patch, Mock
 from GetData import GetData

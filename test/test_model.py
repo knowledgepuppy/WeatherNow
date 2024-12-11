@@ -1,4 +1,7 @@
-
+# -*- coding: utf-8 -*-
+# @Time: 2024.12.12
+# @Author: R
+# @File: test_model.py
 import joblib
 import datetime as DT
 from src.lib.GetModel import GetModel
