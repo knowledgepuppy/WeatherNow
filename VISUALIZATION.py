@@ -119,6 +119,10 @@ def main():
     df=get_chart_data(chart,st.session_state.my_random)
     #area报错
     eval(f'st.{charts_mapping[chart]}(df{",use_container_width=True" if chart in ["Distplot","Altair"] else ""})' if chart != 'PyEchart' else f'st_echarts(options=df)')
+    col1,col2=st.columns(2)
+    video1,video2=get_video_bytes()
+    col1.video(video1, format='video/mp4', start_time=2)
+    col2.video(video2, format='video/mp4')
 
 @st.cache_data(ttl=3600)
 def get_city_mapping():
@@ -253,7 +257,14 @@ def get_audio_bytes(music):
     audio_bytes = audio_file.read()
     audio_file.close()
     return audio_bytes
-
+def get_video_bytes():
+    video_file = open(f'video/开不了口-广告曲.mp4', 'rb')
+    video_bytes1 = video_file.read()
+    video_file.close()
+    video_file = open(f'video/最长的电影-广告曲.mp4', 'rb')
+    video_bytes2 = video_file.read()
+    video_file.close()
+    return video_bytes1,video_bytes2
 main()
 
 
