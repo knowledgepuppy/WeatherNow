@@ -1,7 +1,7 @@
 # 🌦️基于机器学习的天气预测及可视化 WeatherNow
 
 
-[![Contributors][contributors-shield]][contributors-url][![Forks][forks-shield]][forks-url][![Stargazers][stars-shield]][stars-url][![Issues][issues-shield]][issues-url][![MIT License][license-shield]][license-url][![LinkedIn][linkedin-shield]][linkedin-url]
+[![Contributors][contributors-shield]][contributors-url][![Forks][forks-shield]][forks-url][![Stargazers][stars-shield]][stars-url][![Issues][issues-shield]][issues-url][![MIT License][license-shield]][license-url]
 <!-- 项目 LOGO -->
 <br />
 <div align="center">
@@ -14,7 +14,7 @@
   <p align="center">
     基于机器学习的天气预测及可视化模型！
     <br />
-    <a href="https://github.com/Tyxy-R/WeatherNow/blob/main/README.md"><strong>浏览文档 »</strong></a>
+    <a href="https://365.kdocs.cn/l/caMYQV4FKOYM"><strong>浏览文档 »</strong></a>
     <br />
     <br />
     <a href="https://weathernow-android.streamlit.app/">🔗 查看 Demo</a>
@@ -47,7 +47,7 @@ GitHub 上有很多优秀的关于天气预测的 Repository ，但都是基于�
 
 如果你对我的网站感兴趣，欢迎访问我的线上网站[🌦️Weather Now](https://weathernow-android.streamlit.app/) 来开始。
 
-[toc]
+
 
 ## ✨ 功能
 * **实时天气查询**：获取全球各城市的当前天气。
@@ -147,15 +147,15 @@ _转到 [project-guidelines](/docs/project-guidelines.md) 查看更多介绍_
 
 2. 如果你使用的并非`windos`系统或者基于其他理由希望使用命令行。
    你可以通过**依赖管理工具**，例如`pip`来安装这些模块。以下是使用`pip`进行依赖配置的例程。你可以在命令行中输入如下命令：
-    >[!TIP]
-    >在此之前，请确保你的`pip`处于最新版本
-    >你可以通过如下命令对`pip`更新
-    >```cmd
-    >pip install --upgrade pip
-    >```
-    ```
-    pip install moudelname
-    ```
+  >[!TIP]
+  >在此之前，请确保你的`pip`处于最新版本
+  >你可以通过如下命令对`pip`更新
+  >```cmd
+  >pip install --upgrade pip
+  >```
+  ```
+  pip install moudelname
+  ```
 
 * [numpy](https://pypi.org/project/numpy/)
 * [streamlit](https://pypi.org/project/streamlit/)
@@ -200,15 +200,11 @@ _转到 [requirements.txt](/requirements.txt) 查看所有你所应安装的模�
 <!-- 路线图 -->
 ## 📝 项目更新
 
-- [x] 添加更新日志[#3](https://github.com/Tyxy-R/WeatherNow/issues/3)
-- [x] 使用 Radom Frost 进行模型训练[#4](https://github.com/Tyxy-R/WeatherNow/issues/4)
-- [x] 使用Streamlit进行数据可视化[#5](https://github.com/Tyxy-R/WeatherNow/issues/5)
-- [X] 使用Streamlit Cloud进行服务器部署[#6](https://github.com/Tyxy-R/WeatherNow/issues/6)
+- [ ] 针对训练数据进行本地化存储
+- [ ] 进一步调优模型的拟合效果
+- [ ] 更换数据源减少网站响应延迟
+- [ ] 使用Streamlit Cloud进行服务器部署
 - [ ] 进一步优化可视化界面
-    - [x] 增加侧边栏控件[#7](https://github.com/Tyxy-R/WeatherNow/issues/7)
-    - [x] 增加开屏动画[#8](https://github.com/Tyxy-R/WeatherNow/issues/8)
-    - [ ] 增加多种数据展示图样
-- [ ] 优化模型超参数
 
 
 到 [open issues](https://github.com/Tyxy-R/WeatherNow/issues) 页查看所有请求的功能 （以及已知的问题）。
@@ -232,7 +228,7 @@ _转到 [requirements.txt](/requirements.txt) 查看所有你所应安装的模�
 <!-- 许可证 -->
 ## 📃 许可证
 
-根据 MIT 许可证分发。打开 [LICENSE.txt](LICENSE.txt) 查看更多内容。
+根据 MIT 许可证分发。打开 [LICENSE](LICENSE) 查看更多内容。
 
 <!-- 联系我们 -->
 ## 🤝 联系我们
@@ -278,6 +274,5 @@ _转到 [requirements.txt](/requirements.txt) 查看所有你所应安装的模�
 [issues-url]: https://github.com/Tyxy-R/WeatherNow/issues
 [license-shield]: https://img.shields.io/github/license/Tyxy-R/WeatherNow.svg?style=for-the-badge
 [license-url]: https://github.com/Tyxy-R/WeatherNow/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[product-screenshot]: images/screenshot.png
-[linkedin-url]: https://linkedin.com/in/othneildrew
+
+
