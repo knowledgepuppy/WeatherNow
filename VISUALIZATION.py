@@ -25,8 +25,7 @@ def main():
     st.markdown('<br>',unsafe_allow_html=True)
     st.markdown('<br>',unsafe_allow_html=True)
     charts_mapping={
-        'Line':'line_chart','Bar':'bar_chart','Hist':'pyplot',
-        'PyEchart':''
+        '24h':'df_forecastHours','7days':'df_forecastDays'
     }
     if 'first_visit' not in st.session_state:
         st.session_state.first_visit=True
@@ -51,7 +50,7 @@ def main():
     t=st.sidebar.time_input('Time',st.session_state.date_time.time())
     t=f'{t}'.split('.')[0]
     st.sidebar.write(f'The current date time is {d} {t}')
-    chart=st.sidebar.selectbox('Select Chart You Like',charts_mapping.keys(),index=st.session_state.random_chart_index)
+    chart=st.sidebar.selectbox('Select Data You Want',charts_mapping.keys(),index=st.session_state.random_chart_index)
     city=st.sidebar.selectbox('Select City You Like',st.session_state.city_mapping.keys(),index=st.session_state.random_city_index)
     display_mode=st.sidebar.radio('选择你的显示模式',["Wide","Narrow"],index=1)
     color = st.sidebar.color_picker('Pick A Color You Like', '#520520')
@@ -119,13 +118,32 @@ def main():
 
 
     st.markdown(f'### {chart} Chart')
-    df=get_chart_data(chart,st.session_state.my_random)
-    #area报错
+
+
+
+
+    
+ 
+    #自定义
     from pygwalker.api.streamlit import StreamlitRenderer
-    @st.cache_resource
+
     def get_pyg_renderer() -> "StreamlitRenderer":
-        df = df_forecastHours
-        # If you want to use feature of saving chart config, set `spec_io_mode="rw"`
+        try:
+            if chart =="24h":
+                df = df_forecastHours
+                df = df.reset_index()
+            else:
+                df = df_forecastDays
+                df = df.reset_index()
+                df["湿度"] = df["Humidity"].str.replace("%", "").astype(int)
+
+                df[["最低温", "最高温"]] = df["Temperature"].str.extract(r"(\d+)~(\d+)").astype(int)
+                # 删除原来的"温度"列
+                df.drop(columns=["Temperature"], inplace=True)
+                
+            # If you want to use feature of saving chart config, set `spec_io_mode="rw"`
+        except:
+            return StreamlitRenderer(df, spec="./gw_config.json", spec_io_mode="rw")
         return StreamlitRenderer(df, spec="./gw_config.json", spec_io_mode="rw")
 
 
@@ -137,7 +155,6 @@ def main():
     #df_forecastHours['Body Temperature']
     #chart
 
-    eval(f'st.{charts_mapping[chart]}(df{",use_container_width=True" if chart in ["Distplot","Altair"] else ""})' if chart != 'PyEchart' else f'st_echarts(options=df)')
 
 
 
@@ -267,28 +284,7 @@ def my_hash_func(my_random):
     num = my_random.random_num
     return num
 
-@st.cache_resource(hash_funcs={MyRandom: my_hash_func},ttl=3600)
-def get_chart_data(chart,my_random):
-    df=df_forecastDays
-    if chart in ['Line','Bar']:
-        return df
-    elif chart == 'Hist':
-        arr = np.random.normal(1, 1, size=100)
-        fig, ax = plt.subplots()
-        ax.hist(arr, bins=20)
-        return fig
-    elif chart == 'PyEchart':
-        options = {
-            "xAxis": {
-                "type": "category",
-                "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-            },
-            "yAxis": {"type": "value"},
-            "series": [
-                {"data": [820, 932, 901, 934, 1290, 1330, 1320], "type": "line"}
-            ],
-        }
-        return options
+
     
 def get_audio_bytes(music):
     audio_file = open(f'music/{music}-周杰伦.mp3', 'rb')
