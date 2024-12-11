@@ -50,7 +50,7 @@ def main():
     st.sidebar.write(f'The current date time is {d} {t}')
     chart=st.sidebar.selectbox('Select Chart You Like',charts_mapping.keys(),index=st.session_state.random_chart_index)
     city=st.sidebar.selectbox('Select City You Like',st.session_state.city_mapping.keys(),index=st.session_state.random_city_index)
-    display_mode=st.sidebar.radio('选择你的显示模式',["Wide","Narrow"],index=0)
+    display_mode=st.sidebar.radio('选择你的显示模式',["Wide","Narrow"],index=1)
     color = st.sidebar.color_picker('Pick A Color You Like', '#520520')
     st.sidebar.write('The current color is', color)
 
@@ -72,10 +72,7 @@ def main():
             col4.metric('Humidity', value=forecastToday['humidity'], delta=delta_h,delta_color="inverse")
             col5.metric('Wind',forecastToday['wind'])
             col6.metric('UpdateTime',forecastToday['updateTime'])
-        else:
-
-            st.dataframe(forecastToday,use_container_width=True)
-        c1 = (
+            c1 = (
             Line()
             .add_xaxis(xaxis_data=df_forecastHours.index.to_list())
             .add_yaxis(series_name='Temperature', y_axis=df_forecastHours['Temperature'].values.tolist())
@@ -87,27 +84,30 @@ def main():
                 tooltip_opts=opts.TooltipOpts(trigger="axis", axis_pointer_type="cross")
                 )
             .set_series_opts(label_opts=opts.LabelOpts(is_show=True,formatter=JsCode("function(x){return x.data[1] + '°C';}")))
-        )
+            )
 
-        c2 = (
-            Line()
-            .add_xaxis(xaxis_data=df_forecastDays.index.to_list())
-            .add_yaxis(series_name="High Temperature",y_axis=df_forecastDays.Temperature.apply(lambda x:int(x.replace('°C','').split('~')[1])).values.tolist())
-            .add_yaxis(series_name="Low Temperature",y_axis=df_forecastDays.Temperature.apply(lambda x:int(x.replace('°C','').split('~')[0])).values.tolist())
-            .set_global_opts(
-                title_opts=opts.TitleOpts(title="7 Days Forecast"),
-                xaxis_opts=opts.AxisOpts(type_="category"),
-                yaxis_opts=opts.AxisOpts(type_="value",axislabel_opts=opts.LabelOpts(formatter="{value} °C")),
-                tooltip_opts=opts.TooltipOpts(trigger="axis", axis_pointer_type="cross")
-                )
-            .set_series_opts(label_opts=opts.LabelOpts(is_show=True,formatter=JsCode("function(x){return x.data[1] + '°C';}")))
-        )
+            c2 = (
+                Line()
+                .add_xaxis(xaxis_data=df_forecastDays.index.to_list())
+                .add_yaxis(series_name="High Temperature",y_axis=df_forecastDays.Temperature.apply(lambda x:int(x.replace('°C','').split('~')[1])).values.tolist())
+                .add_yaxis(series_name="Low Temperature",y_axis=df_forecastDays.Temperature.apply(lambda x:int(x.replace('°C','').split('~')[0])).values.tolist())
+                .set_global_opts(
+                    title_opts=opts.TitleOpts(title="7 Days Forecast"),
+                    xaxis_opts=opts.AxisOpts(type_="category"),
+                    yaxis_opts=opts.AxisOpts(type_="value",axislabel_opts=opts.LabelOpts(formatter="{value} °C")),
+                    tooltip_opts=opts.TooltipOpts(trigger="axis", axis_pointer_type="cross")
+                    )
+                .set_series_opts(label_opts=opts.LabelOpts(is_show=True,formatter=JsCode("function(x){return x.data[1] + '°C';}")))
+            )
 
-        t = Timeline(init_opts=opts.InitOpts(theme=ThemeType.LIGHT,width='1000px'))
-        t.add_schema(play_interval=10000,is_auto_play=True)
-        t.add(c1, "24 Hours Forecast")
-        t.add(c2, "7 Days Forecast")
-        components.html(t.render_embed(), width=1200, height=520)
+            t = Timeline(init_opts=opts.InitOpts(theme=ThemeType.LIGHT,width='1000px'))
+            t.add_schema(play_interval=10000,is_auto_play=True)
+            t.add(c1, "24 Hours Forecast")
+            t.add(c2, "7 Days Forecast")
+            components.html(t.render_embed(), width=1200, height=520)
+        else:
+            st.dataframe(forecastToday,use_container_width=True)
+
         with st.expander("24 Hours Forecast Data"):
             st.table(df_forecastHours.style.format({'Temperature':'{}°C','Body Temperature':'{}°C','Humidity':'{}%'}))
         with st.expander("7 Days Forecast Data",expanded=True):
