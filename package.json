@@ -1,0 +1,47 @@
+{
+  "name": "weathernow-web-platform",
+  "version": "1.0.0",
+  "description": "专业天气预测平台 - 基于机器学习的天气预测及可视化",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "python-deps": "pip install -r requirements.txt",
+    "start-api": "python -m src.lib.WeatherAPI",
+    "start-streamlit": "streamlit run VISUALIZATION.py",
+    "test": "python -m pytest test/",
+    "setup": "npm run python-deps"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0",
+    "axios": "^1.6.0",
+    "echarts": "^5.4.0",
+    "vue-echarts": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "keywords": [
+    "weather",
+    "prediction",
+    "machine-learning",
+    "visualization",
+    "wind-forecast"
+  ],
+  "author": "R <tian5784879@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tyxy-R/WeatherNow.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.9.0"
+  }
+}
